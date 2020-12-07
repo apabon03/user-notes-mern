@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //aqui importamos nuestros modulos
 
 require('dotenv').config();
@@ -13,3 +14,19 @@ async function main(){
 }
 
 main();
+=======
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+
+import App from './App';
+
+
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+
+>>>>>>> c5daf82f039ca9a324737ff261082dd0309bfc9e

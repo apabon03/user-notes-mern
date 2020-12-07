@@ -1,24 +1,27 @@
-//tener codigo del servidor o framework
-
-
-//defino el servidor
-const express = require('express');
-const cors = require('cors');
-const app = express();
+import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
-//settings: configuraciones del servidor
-app.set('port', process.env.PORT || 4000);
+import Navigation from './components/Navigation';
+import NotesList from './components/NotesList';
+import CreateNote from './components/CreateNote';
+import CreateUser from './components/CreateUser';
 
-//middlewares: funciones que se ejecutan antes de acceder a las rutas
-app.use(cors());
-app.use(express.json());
+function App() {
+  return (
+    <Router>
+      <Navigation/>
+      
+      <div className="container p-4">
+      <Route path="/" exact component={NotesList}/>
+      <Route path="/edit/:id" component={CreateNote}/>
+      <Route path="/create" component={CreateNote}/>
+      <Route path="/user" component={CreateUser}/>
+      </div>
+    </Router>
+  );
+}
 
-//routes
-
-app.use('/api/users', require('./routes/users'));
-app.use('/api/notes', require('./routes/notes'));
-
-
-module.exports = app;
+export default App;
