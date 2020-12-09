@@ -1,4 +1,4 @@
-//codigo de la conexion a la base de datos
+//--codigo de la conexion a la base de datos--
 const mongoose = require('mongoose');
 
 //en esta cadena se crea la base de datos llamada: mernstack
